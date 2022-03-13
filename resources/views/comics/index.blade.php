@@ -9,8 +9,8 @@
             <tr>
                 <th scope="col">Comic</th>
                 <th scope="col">Description</th>
-                <th scope="col">Sale Date</th>
                 <th scope="col">Price</th>
+                <th scope="col">More Info</th>
             </tr>
         </thead>
         <tbody>
@@ -19,12 +19,10 @@
                     <td><img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
                         <div>
                             <strong>{{ $comic->title }}</strong>
-                            ({{ $comic->type }})
-                            <br>
-                            {{ $comic->series }} series
                     <td>{!! $comic->description !!}</td>
-                    <td>{{ $comic->sale_date }}</td>
                     <td>{{ $comic->price }}€</td>
+                    <td><a href="{{ route('comics.show', $comic->id) }}"><button type="button"
+                                class="btn btn-primary">Show</button></a></th>
                 </tr>
             @endforeach
         </tbody>
