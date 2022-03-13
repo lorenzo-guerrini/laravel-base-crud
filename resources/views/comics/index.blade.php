@@ -5,7 +5,7 @@
 @section('content')
     <h1>Comics</h1>
     <table class="table">
-        <thead>
+        <thead class="table-dark">
             <tr>
                 <th scope="col">Comic</th>
                 <th scope="col">Description</th>
@@ -22,7 +22,7 @@
                     <td>{!! $comic->description !!}</td>
                     <td>{{ $comic->price }}€</td>
                     <td><a href="{{ route('comics.show', $comic->id) }}"><button type="button"
-                                class="btn btn-primary">Show</button></a></th>
+                                class="btn btn-dark">Show</button></a></th>
                 </tr>
             @endforeach
         </tbody>

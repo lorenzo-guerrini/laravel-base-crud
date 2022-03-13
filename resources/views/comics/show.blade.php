@@ -11,5 +11,5 @@
         <li><strong>Series: </strong>{{ $comic->series }}</li>
         <li><strong>Sale Date: </strong>{{ $comic->sale_date }}</li>
     </ul>
-    <a href="{{ route('comics.index') }}"><button type="button" class="btn btn-primary">Back</button></a>
+    <a href="{{ route('comics.index') }}"><button type="button" class="btn btn-dark">Back</button></a>
 @endsection
