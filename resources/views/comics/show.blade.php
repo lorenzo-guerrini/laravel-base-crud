@@ -8,8 +8,9 @@
     <div class="text-center">
         <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
     </div>
-    
+
     <ul>
+        <li><strong>ID: </strong>{{ $comic->id }}</li>
         <li><strong>Type: </strong>{{ $comic->type }}</li>
         <li><strong>Series: </strong>{{ $comic->series }}</li>
         <li><strong>Sale Date: </strong>{{ $comic->sale_date }}</li>
