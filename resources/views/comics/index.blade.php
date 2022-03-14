@@ -3,6 +3,9 @@
 @section('title', 'Comics')
 
 @section('content')
+
+    {!! session()->get('msg') !!}
+
     <div class="text-center py-4">
         <a href="{{ route('comics.create') }}">
             <button type="button" class="btn btn-success">New Comic</button>

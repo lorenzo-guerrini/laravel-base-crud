@@ -37,8 +37,10 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        //Inserisco in $data i dati della form
         $data = $request->all();
 
+        //Creazione nuovo record
         $newComic = new Comic();
         $newComic->title = $data["title"];
         $newComic->description = $data["description"];
@@ -109,6 +111,6 @@ class ComicController extends Controller
     {
         $comic->delete();
 
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with(['msg'=>'<div class="alert alert-success" role="alert">Comic succefully deleted</div>']);
     }
 }
