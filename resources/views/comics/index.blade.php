@@ -4,6 +4,7 @@
 
 @section('content')
     <h1>Comics</h1>
+    <a href="{{ route('comics.create') }}"><button type="button" class="btn btn-success">New Comic</button></a>
     <table class="table">
         <thead class="table-dark">
             <tr>
@@ -21,8 +22,12 @@
                             <strong>{{ $comic->title }}</strong>
                     <td>{!! $comic->description !!}</td>
                     <td>{{ $comic->price }}€</td>
-                    <td><a href="{{ route('comics.show', $comic->id) }}"><button type="button"
-                                class="btn btn-dark">Show</button></a></th>
+                    <td>
+                        <a href="{{ route('comics.show', $comic->id) }}"><button type="button"
+                                class="btn btn-dark">Show</button></a>
+                        <a href="{{ route('comics.edit', $comic->id) }}"><button type="button"
+                                class="btn btn-warning">Edit</button></a>
+                        </th>
                 </tr>
             @endforeach
         </tbody>
