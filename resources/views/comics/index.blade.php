@@ -3,8 +3,12 @@
 @section('title', 'Comics')
 
 @section('content')
-    <h1>Comics</h1>
-    <a href="{{ route('comics.create') }}"><button type="button" class="btn btn-success">New Comic</button></a>
+    <div class="text-center py-4">
+        <a href="{{ route('comics.create') }}">
+            <button type="button" class="btn btn-success">New Comic</button>
+        </a>
+    </div>
+
     <table class="table">
         <thead class="table-dark">
             <tr>
@@ -14,27 +18,50 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
+
         <tbody>
             @foreach ($comics as $comic)
                 <tr>
-                    <td><img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+
+                    <td>
+                        <div class="mb-2">
+                            <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+                        </div>
                         <div>
                             <strong>{{ $comic->title }}</strong>
+                        </div>
+                    </td>
+
                     <td>{!! $comic->description !!}</td>
-                    <td>{{ $comic->price }}€</td>
-                    <td>
-                        <a href="{{ route('comics.show', $comic->id) }}"><button type="button"
-                                class="btn btn-dark">More info</button></a>
-                        <a href="{{ route('comics.edit', $comic->id) }}"><button type="button"
-                                class="btn btn-warning">Edit</button></a>
-                        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
-                            @csrf
-                            @method("DELETE")
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
-                        </th>
+
+                    <td><strong>{{ $comic->price }}€</strong></td>
+
+                    <td class="text-center">
+                        <div class="mb-3">
+                            <a href="{{ route('comics.show', $comic->id) }}">
+                                <button type="button" class="btn btn-primary">More
+                                    info</button>
+                            </a>
+                        </div>
+
+                        <div class="mb-3">
+                            <a href="{{ route('comics.edit', $comic->id) }}">
+                                <button type="button" class="btn btn-primary">Edit</button>
+                            </a>
+                        </div>
+
+                        <div class="mb-3">
+                            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                                @csrf
+                                @method("DELETE")
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </td>
+
                 </tr>
             @endforeach
         </tbody>
+
     </table>
 @endsection

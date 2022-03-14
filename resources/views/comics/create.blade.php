@@ -1,10 +1,8 @@
 @extends('layouts.base')
 
-@section('title', 'New Comic')
+@section('title', 'Create New Comic')
 
 @section('content')
-    <h1>Create New Comic</h1>
-
     <form action="{{ route('comics.store') }}" method="POST">
         @csrf
 
@@ -15,7 +13,8 @@
 
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea class="form-control" id="description" name="description" placeholder="Comic's description"></textarea>
+            <textarea class="form-control" style="height: 150px" id="description" name="description"
+                placeholder="Comic's description"></textarea>
         </div>
 
         <div class="form-group">
@@ -43,7 +42,12 @@
             <input type="text" class="form-control" id="type" name="type" placeholder="Comic's type">
         </div>
 
-        <button type="submit" class="btn btn-dark">Save</button>
-        <a href="{{ route('comics.index') }}"><button type="button" class="btn btn-dark">Back</button></a>
+        <div class="text-center pt-2">
+            <button type="submit" class="btn btn-success mx-2">Save</button>
+
+            <a class="mx-2" href="{{ route('comics.index') }}">
+                <button type="button" class="btn btn-danger">Back</button>
+            </a>
+        </div>
     </form>
 @endsection

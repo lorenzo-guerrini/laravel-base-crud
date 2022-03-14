@@ -5,11 +5,21 @@
 @endsection
 
 @section('content')
-    <h1>{{ $comic->title }}</h1>
+    <div class="text-center">
+        <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+    </div>
+    
     <ul>
         <li><strong>Type: </strong>{{ $comic->type }}</li>
         <li><strong>Series: </strong>{{ $comic->series }}</li>
         <li><strong>Sale Date: </strong>{{ $comic->sale_date }}</li>
+        <li><strong>Price: </strong>{{ $comic->price }}€</li>
+        <li><strong>Description: </strong>{!! $comic->description !!}</li>
     </ul>
-    <a href="{{ route('comics.index') }}"><button type="button" class="btn btn-dark">Back</button></a>
+
+    <div class="text-center pt-2">
+        <a href="{{ route('comics.index') }}">
+            <button type="button" class="btn btn-dark">Back</button>
+        </a>
+    </div>
 @endsection
