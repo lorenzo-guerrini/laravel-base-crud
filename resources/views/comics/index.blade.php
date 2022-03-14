@@ -11,7 +11,7 @@
                 <th scope="col">Comic</th>
                 <th scope="col">Description</th>
                 <th scope="col">Price</th>
-                <th scope="col">More Info</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -24,9 +24,14 @@
                     <td>{{ $comic->price }}€</td>
                     <td>
                         <a href="{{ route('comics.show', $comic->id) }}"><button type="button"
-                                class="btn btn-dark">Show</button></a>
+                                class="btn btn-dark">More info</button></a>
                         <a href="{{ route('comics.edit', $comic->id) }}"><button type="button"
                                 class="btn btn-warning">Edit</button></a>
+                        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                         </th>
                 </tr>
             @endforeach
