@@ -111,6 +111,6 @@ class ComicController extends Controller
     {
         $comic->delete();
 
-        return redirect()->route('comics.index')->with(['msg'=>'<div class="alert alert-success" role="alert">Comic succefully deleted</div>']);
+        return redirect()->route('comics.index')->with(['msg' => '<div class="alert alert-success" role="alert">Comic succefully deleted</div>']);
     }
 }
