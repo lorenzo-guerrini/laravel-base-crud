@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST" onsubmit="return confirm('Are you sure?')">
                                 @csrf
                                 @method("DELETE")
                                 <button type="submit" class="btn btn-danger">Delete</button>
