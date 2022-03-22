@@ -27,7 +27,7 @@
 
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea class="form-control @error('description') is-invalid @enderror"" style=" height: 150px" id="description"
+            <textarea class="form-control @error('description') is-invalid @enderror" style=" height: 150px" id="description"
                 name="description" placeholder="Comic's description">{{ old('description') }}</textarea>
             @error('description')
                 <div class="alert alert-danger">{{ $message }}</div>
